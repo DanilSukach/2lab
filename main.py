@@ -1,6 +1,6 @@
 import os
 import csv
-
+import cv2
 
 def csv_file(path,url):
     data = [
@@ -15,8 +15,19 @@ def csv_file(path,url):
         writer = csv.writer(file,delimiter = " ")
         writer.writerows(data)
 
+def copy(url):
+    if not os.path.isdir("dataset_copy"):
+        os.mkdir("dataset_copy")
+    for i in range(1100):
+        a=str(i)
+        filename=str('dataset/' + url + '/' + a.zfill(4) +'.jpg')
+        image=cv2.imread(filename)
+        filewrite=str('dataset_copy/' + url + '_' + a.zfill(4) +'.jpg')
+        cv2.imwrite(filewrite,image)
+
 def main():
-    csv_file("dataset","leopard")
+    copy("leopard")
+    copy("tiger")
 
 if __name__ == "__main__":
     main()

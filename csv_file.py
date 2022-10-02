@@ -16,8 +16,8 @@ def csv_file(path,url):
         writer.writerows(data)
 
 def main():
-    csv_file("dataset/tiger","tiger")
-    csv_file("dataset/leopard","leopard")
+    csv_file("dataset/tiger/","tiger")
+    csv_file("dataset/leopard/","leopard")
     
 
 if __name__ == "__main__":

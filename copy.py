@@ -2,7 +2,8 @@ import os
 import shutil
 
 
-def copy(path,url):
+def copy(path: str,url: str) -> None:
+    """Функция принимает путь к файлам: path и метку класса: label"""
     if not os.path.isdir("dataset_copy"):
         os.mkdir("dataset_copy")
     for i in range(1100):
@@ -13,8 +14,8 @@ def copy(path,url):
         )
 
 def main():
-    copy("dataset/tiger","tiger")
-    copy("dataset/leopard","leopard")
+    copy("dataset/tiger/","tiger")
+    copy("dataset/leopard/","leopard")
     
 
 if __name__ == "__main__":

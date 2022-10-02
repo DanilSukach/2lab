@@ -4,7 +4,8 @@ import random
 import csv
 
 
-def copy_random(path1,url1,path2,url2):
+def copy_random(path1: str,url1: str,path2: str,url2: str) -> None:
+    """Функция принимает два пути: path и две метки класса: label"""
     if not os.path.isdir("dataset_copy_random"):
         os.mkdir("dataset_copy_random")
     data=[]

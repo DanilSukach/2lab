@@ -1,13 +1,9 @@
 import csv
 import os
 
-def url(path,name,label):
-    if name == label:
-        return path
-    else:
-        return None
 
-def path(label):
+def path(label: str) -> list:
+    """Функция принимает метку класса: label"""
     data=[]
     array = os.listdir("dataset_copy")
     n = 0
@@ -19,6 +15,7 @@ def path(label):
     return data
 
 class SimpleIterator:
+    """Класс итератор - задается итерируемый объект и ограничение """
     def __init__(self,start,limit):
         self.limit = limit
         self.counter = 0

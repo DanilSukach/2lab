@@ -1,13 +1,17 @@
 import csv
 
 
-def url(path,name,label):
+def url(path: str,name: str,label: str):
+    """Функция принимает путь к фалу: path
+    метку класса по этому пути: name
+    метку с которой нужжно сравнить: label"""
     if name == label:
         return path
     else:
         return None
 
-def path(label):
+def path(label:str) -> list:
+    """Функция принимает метку класса: label"""
     data=[]
     with open ("data.csv") as r_file:
         file_reader = csv.reader(r_file, delimiter = ";")
@@ -18,6 +22,7 @@ def path(label):
     return data
 
 class SimpleIterator:
+    """Класс итератор - задается итерируемый объект и ограничение """
     def __init__(self,start,limit):
         self.limit = limit
         self.counter = 0

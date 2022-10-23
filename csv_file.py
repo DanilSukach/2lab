@@ -3,6 +3,7 @@ import csv
 import random
 from array import array
 
+
 def csv_file(path: str,label: str) -> None:
     """Функция принимает путь к файлам: path и метку класса: label"""
     info = os.listdir(path)

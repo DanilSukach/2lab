@@ -2,15 +2,15 @@ import os
 import shutil
 
 
-def copy(path: str,url: str) -> None:
+def copy(path: str,label: str) -> None:
     """Функция принимает путь к файлам: path и метку класса: label"""
     if not os.path.isdir("dataset_copy"):
         os.mkdir("dataset_copy")
-    for i in range(1100):
-        a = str(i)
+    info = os.listdir(path)
+    for i in info:
         shutil.copy(
-            os.path.join(path, a.zfill(4) + ".jpg"),
-            os.path.join('dataset_copy/', url + "_" + a.zfill(4) + ".jpg")
+            os.path.join(path, i),
+            os.path.join('dataset_copy/', label + "_" + i)
         )
 
 def main():

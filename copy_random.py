@@ -9,15 +9,15 @@ def copy_random(path: str,label: str) -> None:
     if not os.path.isdir("dataset_copy_random"):
         os.mkdir("dataset_copy_random")
     data = []
-    for i in range(1100):
+    info = os.listdir(path)
+    for i in info:
         control = True
         while control:
             rand_temp = random.randint(0,10000)
             rand = str(rand_temp)
             control = os.path.exists("dataset_copy_random/" + rand + ".jpg")
-        a = str(i)
         shutil.copy(
-            os.path.join(path, a.zfill(4) + ".jpg"),
+            os.path.join(path, i),
             os.path.join("dataset_copy_random/", rand + ".jpg")
         )
         absolute = os.path.abspath('dataset_copy_random/' + rand + ".jpg")

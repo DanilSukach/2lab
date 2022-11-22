@@ -4,3 +4,5 @@ data.csv
 dataset_copy
 dataset_copy_random
 data_copy.csv
+.vscode
+__pycache__
